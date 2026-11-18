@@ -1,0 +1,30 @@
+# GPU machine: install torch first from the CUDA index, then this file:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+# For local GPU inference, swap onnxruntime for onnxruntime-gpu (never install both).
+# Docker and CI keep the CPU packages listed here.
+
+# Training
+torch>=2.3
+torchvision>=0.18
+numpy
+pillow
+scikit-learn
+matplotlib
+
+# Experiment tracking
+mlflow>=2.14
+
+# Export and inference
+onnx>=1.16
+onnxruntime>=1.18
+
+# Serving
+fastapi>=0.110
+uvicorn[standard]
+python-multipart
+
+# Testing and linting
+pytest
+pytest-cov
+httpx
+ruff
